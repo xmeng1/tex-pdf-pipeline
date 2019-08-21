@@ -1,0 +1,130 @@
+\newcommand{\pdfVersion}{0.1.9}
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec}                     %for loading fonts
+\usepackage{longtable}
+\usepackage{xunicode,xltxtra,url,parskip}     %other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo}                 %better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular}                 %for Grades
+\usepackage{titlesec}                    %custom \section
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\usepackage{atbegshi,picture}
+\usepackage{lipsum}
+
+\AtBeginShipout{\AtBeginShipoutUpperLeft{%
+  \put(\dimexpr\paperwidth-1cm\relax,-1.5cm){\makebox[0pt][r]{\framebox{Version \href{https://mengxin.science/me/}{\pdfVersion}}}}%
+}}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty}
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+        {\Huge Your \textsc{Name}
+    }\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+% \section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Address:} & Your Address \\
+    \textsc{Contact:} &  +44 1234567890 \qquad   \href{mailto:email}{Your Email Address}\\
+    \textsc{Website:} & \url{https://mengxin.science}\\
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{longtable}{r|p{14.5cm}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textsc{Apr} 2018  & Title\\
+\textsc{June} 2018 & \emph{Online Learning}\\
+&\footnotesize{Description} 
+ \\
+\end{longtable}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{longtable}{r|p{14.5cm}}
+
+\textsc{Feb 2016} & Position at \textsc{Company}, Location\\
+\textsc{Current} &\emph{Development}\\
+&\footnotesize{Description}
+\\
+
+\end{longtable}
+
+%Section: Technical Projects at the top
+\section{Technical Projects}
+\begin{longtable}{r|p{14.5cm}}
+
+\textsc{Dec 2018} & Project Name, Location \\
+\textsc{Current} &\emph{Leader} \\
+&\footnotesize{Description}
+\\
+\end{longtable}
+
+%Section: Transferable Skills
+\section{Key Transferable Skills}
+\begin{tabular}{p{1.7cm}p{14.5cm}}
+
+{Title:}& \footnotesize{Description}
+\\
+
+{Title:} & \footnotesize{Description}
+
+\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+\end{tabular}
+
+%Section: Computer Skills
+\section{Professional Skills}
+\begin{tabular}{rp{14.5cm}}
+Advance Knowledge:& \textsc{JAVA}\\
+Intermediate Knowledge:& {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+\end{tabular}
+
+\end{document}

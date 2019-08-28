@@ -25,15 +25,17 @@ ls
 # 1. in tex source project under the .circleci folder `latest-version.txt`
 # 2. in published project `version.txt`
 #########
-# Variables
-G_GIT_EMAIL=x.meng@outlook.com
-G_GIT_NAME="Xin Meng"
-PUBLISH_FOLDER=texpdf
-PUBLISH_GIT_REPO=git@github.com:xmeng1/texpdf.git
-PUBLISH_GIT_BRANCH=master
+# Variables MUST UPDATED
+G_GIT_EMAIL=x.meng@outlook.com  # update to your email address which will be used as commit author
+G_GIT_NAME="Xin Meng"           # update to your name which will be used as commit author
+PUBLISH_GIT_REPO=git@github.com:xmeng1/texpdf.git # update to your repo for publish web page with PDF files
+PUBLISH_GIT_BRANCH=master       # the branch used in the publish repo
+# MUST UPDATED END
 
-CURRENT_VERSION_FILE=version.txt       # in publish repo folder
-LATEST_VERSION_FILE=latest-version.txt # in top folder
+PUBLISH_FOLDER=texpdf           # KEEP IT
+
+CURRENT_VERSION_FILE=version.txt       # in publish repo folder KEEP IT
+LATEST_VERSION_FILE=latest-version.txt # in top folder KEEP IT
 
 PDF_NAME_PREFIX="professional_pdf_"
 PDF_NAME_LATEST=${PDF_NAME_PREFIX}"latest.pdf"

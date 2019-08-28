@@ -5,9 +5,9 @@ jobs:
       - image: koppor/texlive:v1.5.0
     steps:
       # add ssh key of published repo
-      - add_ssh_keys:
-          fingerprints:
-            - ${PUBLISH_REPO_FINGERPRINTS}
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - ${PUBLISH_REPO_FINGERPRINTS}
       # checkout source code
       - checkout
       # build latex

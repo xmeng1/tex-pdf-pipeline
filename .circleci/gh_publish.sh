@@ -24,7 +24,7 @@ cd ${siteSource}
 #########
 # Variables
 G_GIT_EMAIL=x.meng@outlook.com
-G_GIT_NAME=Xin Meng
+G_GIT_NAME="Xin Meng"
 PUBLISH_FOLDER=texpdf
 PUBLISH_GIT_REPO=git@github.com:xmeng1/texpdf.git
 PUBLISH_GIT_BRANCH=master

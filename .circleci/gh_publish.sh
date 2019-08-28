@@ -13,6 +13,9 @@ then
     exit 1
 fi
 cd ${siteSource}
+# check current foler and fiels
+pwd
+ls
 #########
 # version manage: actually, we need to use git to manage the version, and use CI automatically
 #   to retrieve the version. But we want to use the Overleaf to edit Latex, so it cannot make
@@ -40,7 +43,7 @@ TEX_BUILD_PDF_NAME=main.pdf
 PDF_FILE_STORAGE_FOLDER=pdf/publish
 
 # get the version information
-latest_version=$(cat ${LATEST_VERSION_FILE}}) # the version will be update to
+latest_version=$(cat ${LATEST_VERSION_FILE}) # the version will be update to
 echo "latest version:"${latest_version}
 
 PDF_NAME_NEW_VERSION=${PDF_NAME_PREFIX}"v"${latest_version}".pdf"

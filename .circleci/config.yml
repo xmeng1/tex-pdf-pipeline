@@ -28,7 +28,7 @@ workflows:
   cv-workflow:
     jobs:
       - build:
-          context: GitHub
+          # context: GitHub
           filters:
             branches:
               only: master
